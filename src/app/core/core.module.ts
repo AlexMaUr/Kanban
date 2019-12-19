@@ -6,6 +6,7 @@ import { NgxsStoreModule } from '../ngxs/ngxs.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { MatSnackBarModule } from '@angular/material';
 
 import { environment } from '../../environments/environment';
 import { VALIDATION, VALIDATION_VALUE } from './constants/validation.const';
@@ -19,6 +20,7 @@ import { VALIDATION, VALIDATION_VALUE } from './constants/validation.const';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatSnackBarModule,
   ],
   providers: [
     {
