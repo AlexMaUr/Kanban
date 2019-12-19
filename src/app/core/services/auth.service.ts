@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { AuthInterface } from '../models/auth.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { SignInAction, SignUpAction } from '../../ngxs/auth/auth.actions';
 
 
 @Injectable({
@@ -19,11 +20,12 @@ export class AuthService {
   ) {
   }
 
-  signIn({email, password}) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  signIn(data: AuthInterface) {
+    this.store.dispatch( new SignInAction(data) );
   }
 
-  signInRequest(data: AuthInterface) {
+  signInRequest({email, password}) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   signUp({email, password, ...rest}) {
@@ -31,10 +33,11 @@ export class AuthService {
       email,
       password
     };
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    this.store.dispatch( new SignUpAction(input) );
   }
 
-  signUpRequest() {
+  signUpRequest({email, password}) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   logout() {
