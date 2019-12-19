@@ -1,4 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600&display=swap');
+@import "styles/theme.scss";
+@import './styles/media.scss';
+@import './styles/base.scss';
+@import './styles/variables.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  font: 12px/20px 'Nunito Sans', sans-serif;
+  color: #333;
+  @include desktop {
+    font: 14px/20px 'Nunito Sans', sans-serif;
+  }
+}
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include tablets {
+    max-width: $tabletsContainer;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include desktop {
+    max-width: $desktopContainer;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.title {
+  font-weight: 700;
+  color: $gray900;
+  font-size: 18px;
+  opacity: .8;
+  @include tablets {
+    font-size: 26px;
+  }
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #B4B4B4;
+}
+.row {
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+.link-wrap {
+  display: flex;
+  justify-content: center;
+  .link {
+    display: block;
+    align-self: center;
+    text-decoration: none;
+    color: $gray900;
+    cursor: pointer;
+  }
+}
+.submit-btn {
+  width: 150px;
+  height: 40px;
+  align-self: center;
+  border-radius: 0!important;
+  margin-top: 20px!important;
+  font-size: 18px;
+  color: #fff!important;
+}
+
+.form-field {
+  font-size: 15px;
+  width: 100%;
+}
+
+.snack-error {
+  color: #f43 !important;
+}
+
+.snack-success {
+  color: #6bac00 !important;
+}
