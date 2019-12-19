@@ -51,4 +51,8 @@ export class SignInComponent implements OnInit {
       this.authService.signIn(this.signInForm.value);
     }
   }
+
+  googleAuth() {
+    this.authService.googleAuth();
+  }
 }

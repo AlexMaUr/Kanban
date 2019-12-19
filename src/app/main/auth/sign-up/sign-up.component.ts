@@ -76,4 +76,8 @@ export class SignUpComponent implements OnInit {
     }
     return null;
   }
+
+  googleAuth() {
+    this.authService.googleAuth();
+  }
 }
