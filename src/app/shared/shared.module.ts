@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import {
-  MatButtonModule,
+  MatButtonModule, MatIconModule,
   MatInputModule,
 } from '@angular/material';
 
@@ -16,6 +16,7 @@ import {
     // material modules
     MatButtonModule,
     MatInputModule,
+    MatIconModule,
   ],
   exports: [
     CommonModule,
@@ -24,6 +25,7 @@ import {
     // material modules
     MatButtonModule,
     MatInputModule,
+    MatIconModule,
   ],
 })
 export class AppSharedModule {
