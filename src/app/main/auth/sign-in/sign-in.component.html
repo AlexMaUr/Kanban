@@ -1,0 +1,39 @@
+<div class="title">Sign In</div>
+
+<div class="sign-in-error-wrap">
+  <div class="sign-in-error" *ngIf="false">
+    Wrong email or password
+  </div>
+</div>
+
+<form [formGroup]="signInForm" class="form" (submit)="onSubmit()">
+  <div class="row">
+    <mat-form-field class="form-field">
+      <input matInput [formControl]="emailControl" type="email" placeholder="EMAIL" class="email"/>
+      <mat-error *ngFor="let error of errors.email">
+        <span *ngIf="emailControl.hasError(error.name)">{{error.text}}</span>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="form-field">
+      <input matInput [formControl]="passwordControl" type="password" placeholder="PASSWORD"/>
+      <mat-error *ngFor="let error of errors.password">
+        <span *ngIf="passwordControl.hasError(error.name)">{{error.text}}</span>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button
+    mat-flat-button
+    [disabled]="!signInForm.valid"
+    type="submit"
+    class="submit-btn"
+    color="primary">
+    Sign In
+  </button>
+
+</form>
+<div class="link-wrap">
+  <a class="link" routerLink="/sign-up">Sign Up</a>
+</div>
