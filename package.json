@@ -29,6 +29,7 @@
     "@angular/router": "~8.2.14",
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
+    "@ngxs/router-plugin": "^3.6.0",
     "@ngxs/store": "^3.6.0-dev.master-f0f9ace",
     "express": "^4.15.2",
     "firebase": "^7.6.0",
