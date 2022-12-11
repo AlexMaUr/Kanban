@@ -31,7 +31,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
     "@ngxs/router-plugin": "^3.6.0",
     "@ngxs/store": "^3.6.0-dev.master-f0f9ace",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "firebase": "^7.6.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
